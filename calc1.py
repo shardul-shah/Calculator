@@ -1,15 +1,21 @@
 import readline # for reading in input correctly
+from termcolor import colored
+import os
 
 # Calculator based on the infix notation
+# By Shardul Shah
+
 # Things to add later on:
 # Exponents
 # Brackets
 # Decimals
 # Negative numbers
-# GUI
+# GUI (possibly)
 
-print("Note: a basic math statement only includes +, -, /, and *")
-math_str = input("Please input any basic math statement with integers to be calculated, in the INFIX notation:")
+def center_amnt():
+   num_col =  os.get_terminal_size().columns
+   return num_col
+
 
 def dict_to_list(a_dict):
     
@@ -113,74 +119,23 @@ def inspect_string(input_str):
         
         # for 2 separate lists FIXME print(dict_of_symbols)
         
-test_str = inspect_string(math_str)
-math_var = do_math(test_str)
-print(math_var) #there will always be ONE number as the final result in math_var
-
-print("===========================================================================================")
-print("||                                                                                       ||")
-print("||                                                                                       ||")
-print("                                       YOUR RESULT:", math_var[0])                         
-print("||                                                                                       ||")
-print("||                                                                                       ||")
-print("===========================================================================================")
+def main():
+    print("Note: a basic math statement only includes +, -, /, and *, without brackets.\n")
+    math_str = input("Please input any basic math statement (see above) with natural numbers to be calculated, in the INFIX (e.g. 40*30-20) notation: \n")
+    test_str = inspect_string(math_str)
+    math_var = do_math(test_str)
+    print(math_var) #there will always be ONE number as the final result in math_var
+    print(colored("===========================================================================================", "red").center(center_amnt()))
+    print(colored("||                                                                                       ||", "yellow").center(center_amnt()))
+    print(colored("||                                                                                       ||", "yellow").center(center_amnt()))
+    result_str ="YOUR RESULT: " + str(math_var[0])
+    print(colored(result_str, "yellow").center(center_amnt()))                         
+    print(colored("||                                                                                       ||", "yellow").center(center_amnt()))
+    print(colored("||                                                                                       ||", "yellow").center(center_amnt()))
+    print(colored("===========================================================================================", "red").center(center_amnt()))        
+        
+if __name__ == "__main__":
+    main()
     
-# Things I learned / important things for this project    
-"""  
-  my_dict = {3: "hi", 4: "lol"}
-
-  for x in my_dict:
-      print(x)
-      print(my_dict[x])
-
-  # can also double iterate through keys AND their values using for x, y like:
-    https://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops/3294969
-  
-  # x is each key in my_dict
-  # like an array, my_dict[x] accesses the dict for THAT KEY and finds the value
     
-  my_list = [2, "hi", "lol", 'a']
-
-  for x in my_list:
-    print(x)
-  # x is each object/thing in the list  
-
- use enumerate as a workaround to access all items/indexes
- array is like a list except you cant do mutual (all index) calculations with list, can with array , and array can only have ONE data type in the entire array, unlike list.
-
-del handy to delete entire elements in lists, deletes key-value in dictionary.
-
-  print(my_list[2])
-  # but a list can also be treated like an array, like this:
-
-  print("\n")
-
-  for x in range((len(my_list))):
-    print(my_list[x])
-
-iterate through each element of a list
-
-or 
-
-  for x in range((len(my_dict))):
-    print(my_list[x])
-
-iterate through each element of a dict
-
-  
-  Tuples cannot be changed/the length can't be modified, and can be done formed like:
-   my_tuple = (2, "hi", "ok")
-
-tuple_formation = tuple()
-dict_formation = dict()
-list formation = list()
-
-Enumerate can also be used to iterate through stuff.
-
-
-list_of_num[i] = int(num_string) # to add a new integer to a dict
-list_of_num.append() # to add a new integer to the end of a list 
-
- """
-             
-  
+    
