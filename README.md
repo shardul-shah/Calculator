@@ -8,8 +8,9 @@ In the future, I will use regex/shlex modules to simplify the parsing and handli
 
 Source of the termcolor module and code: https://pypi.python.org/pypi/termcolor. I do not own termcolor.py in any way.
 
-# Run "python3 calc1.py" if the module termcolor exists on your machine. 
-Full termcolor module along with set up instructions, from https://pypi.python.org/pypi/termcolor, is included in this directory.
+# Run "python3 calc1.py" if the module termcolor exists on your machine. Note: you should have termcolor.py in 
+# the same directory as calc1.py. 
+Full termcolor module along with set up/run instructions, from https://pypi.python.org/pypi/termcolor, is included in this directory.
 # Else, run "python3 calc_basic.py"
 
 
