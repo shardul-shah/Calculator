@@ -10,6 +10,7 @@ import os # for centering output
 # Decimals
 # Negative numbers
 # GUI (possibly)
+# A loop to output results based on os.get_terminal_size().
 
 def center_amnt():
    num_col =  os.get_terminal_size().columns
