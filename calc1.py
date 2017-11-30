@@ -1,5 +1,5 @@
 import readline # for reading in input correctly
-from termcolor import colored
+from termcolor import colored # for colored output on terminal
 import os
 
 # Calculator based on the infix notation
